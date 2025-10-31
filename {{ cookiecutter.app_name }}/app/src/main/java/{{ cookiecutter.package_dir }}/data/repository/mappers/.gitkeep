@@ -1,0 +1,3 @@
+Model Mappers Go Here..
+└── mappers/
+    └── UserMapper.kt

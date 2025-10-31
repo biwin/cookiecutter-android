@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_{{ cookiecutter.fragment_one.split('.')[1]|lower }}"
+        android:icon="@drawable/ic_home"
+        android:title="@string/title_{{ cookiecutter.fragment_one.split('.')[1]|lower }}" />
+
+    <item
+        android:id="@+id/navigation_{{ cookiecutter.fragment_two.split('.')[1]|lower }}"
+        android:icon="@drawable/ic_explore"
+        android:title="@string/title_{{ cookiecutter.fragment_two.split('.')[1]|lower }}" />
+
+    <item
+        android:id="@+id/navigation_{{ cookiecutter.fragment_three.split('.')[1]|lower }}"
+        android:icon="@drawable/ic_notification"
+        android:title="@string/title_{{ cookiecutter.fragment_three.split('.')[1]|lower }}" />
+
+</menu>

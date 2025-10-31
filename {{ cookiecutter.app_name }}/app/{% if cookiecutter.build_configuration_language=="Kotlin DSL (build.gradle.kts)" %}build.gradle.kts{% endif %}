@@ -1,0 +1,115 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'com.google.devtools.ksp'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlin-parcelize'
+    id 'androidx.navigation.safeargs'
+    id 'org.jetbrains.kotlin.plugin.serialization'
+    id 'kotlinx-serialization'
+}
+
+android {
+    namespace = "{{ cookiecutter.package_name }}"
+    compileSdk = 36
+
+    defaultConfig {
+        applicationId "{{ cookiecutter.package_name }}"
+        minSdk = 24
+        targetSdk = 36
+        versionCode = 2
+        versionName = "1.0"
+        multiDexEnabled = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
+}
+
+dependencies {
+    // Core
+    implementation 'androidx.core:core-ktx:1.16.0'
+    implementation 'androidx.appcompat:appcompat:1.7.1'
+
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
+    implementation 'androidx.vectordrawable:vectordrawable:1.2.0'
+
+    // Material 3
+
+    implementation 'com.google.android.material:material:1.14.0-alpha03'
+
+    // Lifecycle
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.9.2'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.9.2'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    //paging
+    implementation "androidx.paging:paging-runtime:3.3.6"
+
+    // Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:2.9.0"
+    implementation "androidx.navigation:navigation-ui-ktx:2.9.0"
+
+    // hilt
+    implementation 'com.google.dagger:hilt-android:2.56.2'
+    kapt 'com.google.dagger:hilt-compiler:2.56.2'
+    def hilt_viewmodels = "1.0.0"
+//    implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
+    kapt "androidx.hilt:hilt-compiler:$hilt_viewmodels"
+
+    // Glide
+    implementation "com.github.bumptech.glide:glide:4.16.0"
+
+    // Coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2"
+
+    // Room
+    implementation "androidx.room:room-runtime:2.7.2"
+    implementation "androidx.room:room-ktx:2.7.2"
+    ksp "androidx.room:room-compiler:2.7.2"
+
+    // Fragment
+    implementation 'androidx.fragment:fragment-ktx:1.8.8'
+
+    // Flexbox
+    implementation 'com.google.android.flexbox:flexbox:3.0.0'
+
+    // sdp
+    implementation 'com.intuit.sdp:sdp-android:1.1.1'
+    implementation 'com.intuit.ssp:ssp-android:1.1.1'
+
+    // DataStore
+    implementation "androidx.datastore:datastore:1.1.7"
+    implementation "androidx.datastore:datastore-preferences:1.1.7"
+    implementation "androidx.security:security-crypto:1.1.0-alpha06"
+
+    // jwt
+    implementation 'com.auth0.android:jwtdecode:2.0.2'
+
+    // Kotlin Serialization
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-core:1.8.1"
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.1"
+
+    // Retrofit + Kotlin Serialization Wrapper
+    implementation "com.squareup.retrofit2:retrofit:3.0.0"
+    implementation 'com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0'
+    implementation "com.squareup.okhttp3:okhttp:4.12.0"
+}

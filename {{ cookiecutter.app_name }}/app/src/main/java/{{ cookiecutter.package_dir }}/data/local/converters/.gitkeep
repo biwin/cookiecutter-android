@@ -1,0 +1,7 @@
+└── models/
+    ├── auth/
+    │   ├── LoginRequest.kt       (Request models for Auth feature)
+    │   └── AuthTokenResponse.kt  (Response models for Auth feature)
+    └── user/
+        ├── UserResponse.kt       (Response models for User feature)
+        └── UpdateProfileRequest.kt (Request models for User feature)

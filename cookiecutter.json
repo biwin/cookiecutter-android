@@ -1,0 +1,22 @@
+{
+  "app_name": "MyApplication",
+  "package_name": "com.username.myapp",
+  "package_dir": "{{ cookiecutter.package_name | replace('.', '/') }}",
+
+  "fragment_one": "home.Home",
+  "fragment_two": "explore.Explore",
+  "fragment_three": "notifications.Notification",
+
+  "build_configuration_language": ["Groovy DSL (build.gradle)", "Kotlin DSL (build.gradle.kts)"],
+
+  "install_room": true,
+
+   "__prompts__": {
+        "install_room": "Do You want to install Room persistence library?",
+        "build_configuration_language": "Build Configuration Language?"
+    },
+
+  "_copy_without_render": [".gradle", "gradle/", "*gradlew", "*gradlew.bat"]
+}
+
+
