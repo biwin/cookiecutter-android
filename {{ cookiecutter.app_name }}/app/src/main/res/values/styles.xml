@@ -1,6 +1,6 @@
 <resources>
 
-    <style name="Theme.{{ cookiecutter.app_name }}" parent="Theme.Material3Expressive.DayNight.NoActionBar">
+    <style name="Theme.{{ cookiecutter.app_name | replace(' ' , '') }}" parent="Theme.Material3Expressive.DayNight.NoActionBar">
         <item name="colorPrimary">@color/primary</item>
         <item name="colorOnPrimary">@color/onPrimary</item>
         <item name="colorPrimaryContainer">@color/primaryContainer</item>
